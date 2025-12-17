@@ -6,6 +6,7 @@ import { ProductPage } from "./pages/ProductPage/ProductPage.tsx";
 import { NotFoundPage } from "./pages/NotFound/NotFoundPage.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthPage } from "./pages/AuthPage/AuthPage.tsx";
+import { Toaster } from "react-hot-toast";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/:userName" element={<ProductPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
+                <Toaster />
             </BrowserRouter>
         </div>
     );

@@ -11,7 +11,7 @@ export const Header = () => {
 
     return (
         <header className="w-100wv h-17 flex items-center justify-center fixed top-0 inset-x-0 z-100">
-            <div className="w-240 bg-white/80 shadow-[#f1f1f1] shadow-lg backdrop-blur-lg border-gray-50 rounded-4xl py-3 px-7 flex items-center justify-between">
+            <div className="w-240 bg-white/80 shadow-[#2b2b2b17] shadow-lg backdrop-blur-lg border-gray-50 rounded-4xl py-3 px-7 flex items-center justify-between">
                 <Link
                     to="/"
                     className="w-auto font-extrabold text-xl flex items-center cursor-pointer"
