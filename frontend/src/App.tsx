@@ -5,22 +5,24 @@ import { DashboardPage } from "./pages/DashboardPage/DashboardPage.tsx";
 import { ProductPage } from "./pages/ProductPage/ProductPage.tsx";
 import { NotFoundPage } from "./pages/NotFound/NotFoundPage.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthPage } from "./pages/AuthPage/AuthPage.tsx";
 
 function App() {
-  return (
-    <div className="app">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/app" element={<DashboardPage />} />
-          <Route path="/:userName" element={<ProductPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="app">
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/app" element={<DashboardPage />} />
+                    <Route path="/auth" element={<AuthPage />} />
+                    <Route path="/:userName" element={<ProductPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
