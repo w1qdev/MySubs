@@ -8,6 +8,7 @@ import { ProductsModule } from './products/products.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { PaymentsModule } from './payments/payments.module';
 import { HealthModule } from './health/health.module';
+import { HashModule } from './hash/hash.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { HealthModule } from './health/health.module';
     SubscriptionsModule,
     PaymentsModule,
     HealthModule,
+    HashModule,
   ],
   controllers: [AppController],
   providers: [AppService],

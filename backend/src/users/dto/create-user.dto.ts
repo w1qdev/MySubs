@@ -9,9 +9,10 @@ import {
 } from 'class-validator';
 
 export class CreateUserDto {
-  @IsNotEmpty()
-  @IsString()
-  name: string;
+  // @IsOptional()
+  // @IsNotEmpty() prod
+  // @IsString()
+  // name?: string;
 
   @IsNotEmpty()
   @IsEmail()
