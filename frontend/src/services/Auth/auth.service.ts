@@ -1,26 +1,30 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
 export const instance = axios.create({
     baseURL: "http://localhost:3000/",
 });
+export interface IUserDataDto {
+    email: string;
+    password: string;
+    repeatPassword?: string;
+}
 
 export class AuthService {
-    provider: any;
+    provider: AxiosInstance;
 
-    constructor(provider: any) {
+    constructor(provider: AxiosInstance) {
         this.provider = provider;
     }
 
-    async createUser(userData) {
+    async createUser(userData: IUserDataDto) {
         const response = await this.provider.post("users", userData);
 
         return response;
     }
 
-    async loginUser(userData) {
+    async loginUser(userData: IUserDataDto) {
         const response = await this.provider.post("users/auth", userData);
 
-        console.log(response);
         return response;
     }
 }

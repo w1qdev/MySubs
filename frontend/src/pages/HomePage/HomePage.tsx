@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
     WalletIcon,
@@ -8,7 +8,29 @@ import {
     Zap,
     LockKeyhole,
     ChartNoAxesCombined,
+    ChartNetwork,
+    MailCheck,
+    Gift,
+    BotMessageSquare,
 } from "lucide-react";
+
+export interface IToolsCard {
+    title: string;
+    description: string;
+    svg?: ReactNode;
+}
+
+const ToolsCard = ({ title, description, svg }: IToolsCard) => {
+    return (
+        <div className="w-3/10 min-h-60 flex items-start flex-col p-10.5 rounded-md bg-[#F9FAFB]">
+            <div className="mb-3 bg-white w-10 h-10 flex justify-center items-center rounded-md">
+                {svg}
+            </div>
+            <div className="text-xl font-bold mb-1.5">{title}</div>
+            <div className="text-[#00000088]">{description}</div>
+        </div>
+    );
+};
 
 export const HomePage = () => {
     return (
@@ -232,6 +254,68 @@ export const HomePage = () => {
                                 бизнес на 100%.{" "}
                             </p>
                         </div>
+                    </div>
+                </div>
+                <div className="w-full flex justify-center items-center flex-col mt-20">
+                    <div className="text-3xl font-bold mb-5.5 text-center">
+                        Всё, что нужно для роста сообщества
+                    </div>
+                    <div className="w-150 text-center text-[#00000088]">
+                        Мы создали инструменты, которые помогают блогерам и
+                        администраторам зарабатывать на своём контенте проще и
+                        эффективнее
+                    </div>
+
+                    <div className="flex mt-10 flex-wrap justify-center items-center gap-12 max-w-6xl">
+                        <ToolsCard
+                            svg={<Zap className="text-[#CA8A04] w-7 h-7" />}
+                            title="Авто-модерация"
+                            description="Бот сам добавляет и удаляет участников из чатов
+                                и каналов при окончании подписки."
+                        />
+
+                        <ToolsCard
+                            svg={
+                                <WalletIcon className="text-[#3B82F6] w-7 h-7" />
+                            }
+                            title="Любые платежи"
+                            description="Принимаем оплату картам РФ, и через СБП без
+                                ограничений"
+                        />
+
+                        <ToolsCard
+                            svg={
+                                <ChartNetwork className="text-[#AA5BF7] w-7 h-7" />
+                            }
+                            title="Глубокая аналитика"
+                            description="Бот сам добавляет и удаляет участников из чатов
+                                и каналов при окончании подписки."
+                        />
+
+                        <ToolsCard
+                            svg={
+                                <MailCheck className="text-[#22C45E] w-7 h-7" />
+                            }
+                            title="Рассылки"
+                            description="Отправляйте сообщение всем подписчикам или
+                                отдельным группам в один клик"
+                        />
+
+                        <ToolsCard
+                            svg={<Gift className="text-[#F9771E] w-7 h-7" />}
+                            title="Промокоды"
+                            description="Создавайте гибкие скидки и акции для привлечения
+                                аудитории в канал"
+                        />
+
+                        <ToolsCard
+                            svg={
+                                <BotMessageSquare className="text-[#EE4545] w-7 h-7" />
+                            }
+                            title="Поддержка 24/7"
+                            description="Наша команда всегда на связи, чтобы помочь вам и
+                                вашим подписчикам"
+                        />
                     </div>
                 </div>
             </div>

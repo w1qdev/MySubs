@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AuthItem } from "./AuthItem";
 import { RegistrationItem } from "./RegistrationItem";
-import { authService } from "../../services/Auth/auth.service";
+import { authService } from "../../services/auth/auth.service";
 import { validateEmail, validatePassword } from "../../common/utils/utils";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
